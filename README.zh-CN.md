@@ -14,6 +14,7 @@ XDMA。
 [FPGA 构建](fpga/README.md) ·
 [实测结果](docs/VALIDATED_RESULTS.zh-CN.md) ·
 [FPGA RAM 盘](experiments/ramdisk/README.zh-CN.md) ·
+[NAND 读取实验](docs/NAND_READ_OPTIMIZATION.zh-CN.md) ·
 [完整回归](docs/EXACT_IMAGE_REGRESSION.zh-CN.md) ·
 [故障排查](docs/TROUBLESHOOTING.zh-CN.md)
 
@@ -61,6 +62,12 @@ bitstream 由本地构建生成，不放进 Git。完整数字和精简证据见
 [实测结果](docs/VALIDATED_RESULTS.zh-CN.md)。
 
 ![原生 Ubuntu 下进行 XDMA DDR3 校验](docs/images/xdma-debug-session.jpg)
+
+我又在扩展 IO 上接了一块1.8 V的 Macronix `MX30UF1G18AC-TI` NAND小板。
+目前通过重复验证的最快NAND→DDR结果为53.39 MB/s，125 MHz控制时钟下
+同一块64页读取4096次通过。两个旧150 MHz采样配置出现过真实读错，新的
+晚采样版本已通过本机构建检查，尚待实测。[实验记录](docs/NAND_READ_OPTIMIZATION.zh-CN.md)
+整理了提速过程、错误和验证范围；这次更新记录，默认FPGA构建仍是XDMA/DDR设计。
 
 ## 硬件链路
 

@@ -50,6 +50,10 @@ event 节点接入一个最小自定义中断源，测量触发、唤醒和用�
 
 这样可以先把协议和驱动接口跑通，再决定是否把真实外设接入 J1–J4。
 
+单颗NAND已经通过扩展IO跑通NAND→DDR→XDMA数据路径，缓存页读取、EDO和
+重叠搬运的实测结果见[NAND实验记录](NAND_READ_OPTIMIZATION.zh-CN.md)。
+当前下一步是验证已构建的CE150晚采样镜像；实机验证暂停，尚未确认更高速度。
+
 ## 7. Windows 原生 DMA
 
 Windows 已经完成 Vivado、JTAG 和 PCIe 枚举，原生 DMA 还没有验证。驱动获取、

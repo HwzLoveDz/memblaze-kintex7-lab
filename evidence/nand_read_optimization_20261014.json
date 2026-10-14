@@ -1,0 +1,196 @@
+{
+  "schema": "memblaze-nand-experiment-summary-v1",
+  "recorded_through": "2026-10-14",
+  "published_on": "2026-10-15",
+  "publication_scope": "EXPERIMENT_RECORDS_ONLY",
+  "nand_experiment_sources_in_repository": false,
+  "nand": {
+    "part": "MX30UF1G18AC-TI",
+    "voltage_v": 1.8,
+    "bus_width_bits": 8,
+    "package": "TSOP48",
+    "page_data_bytes": 2048,
+    "page_oob_bytes": 64
+  },
+  "host": {
+    "model": "MS-A2",
+    "system": "Ubuntu 24.04.5 Persistent Live USB",
+    "kernel": "7.0.0-31-generic",
+    "secure_boot": "Enabled"
+  },
+  "throughput_definition": {
+    "unit": "decimal MB/s",
+    "numerator": "2048-byte useful payload per page",
+    "denominator": "FPGA cycles for complete NAND-to-DDR request including protocol and DDR transfer",
+    "not_pcie_or_filesystem_throughput": true
+  },
+  "fastest_repeat_tested": {
+    "clock_hz": 125000000,
+    "byte_cycle_ns": 16.0,
+    "capture_phase_deg": 112.5,
+    "capture_delay_ns": 2.5,
+    "physical_result": "PASS",
+    "edo_full_block_requests": 4096,
+    "slow_and_normal_requests": 7,
+    "passed_requests": 4103,
+    "failed_requests": 0,
+    "useful_MB_s": {
+      "min": 53.392078523896735,
+      "median": 53.393296508122724,
+      "max": 53.39973534799132,
+      "requests": 4096
+    },
+    "repeated_block": 2,
+    "unique_pages": 64,
+    "rows": [
+      128,
+      191
+    ],
+    "repeated_useful_bytes": 536870912,
+    "all_requests_raw_oob_bytes_checked": 554594304,
+    "whole_chip_scan": false,
+    "bch_corrected_bits": 0,
+    "temperature_min_c": 36.5,
+    "temperature_max_c": 37.25,
+    "driver_cleanup": "PASS",
+    "temperature_sram_restore": "PASS",
+    "archive_sha256": "c090c0fe4c8ec8cd502388272170b87b511bf4c38874b4cf63eb343a00dc7ffa",
+    "golden_sha256": "3a0788cf5b4a304f3b3d68c2a3889c0d403bc46b3867176ef8ead917206a5c63",
+    "independent_audit_sha256": "70ffe7fac15c6acbdf5594f939f78a877ebcfcc87f1ac52f8b02b96af02b2ae7"
+  },
+  "physical_150mhz_failures": [
+    {
+      "clock_hz": 150000000,
+      "byte_cycle_ns": 13.333333333333334,
+      "capture_phase_deg": 67.5,
+      "capture_delay_ns": 1.25,
+      "physical_result": "FAIL",
+      "request_length_bytes": 1,
+      "first_error": {
+        "row": 128,
+        "column": 0,
+        "received_hex": "0d",
+        "expected_hex": "4d"
+      },
+      "byte_error_count": 1,
+      "bit_error_count": 1,
+      "retry_count": 0,
+      "first_failure_preserved": true,
+      "normal_recovery": "PASS",
+      "archive_sha256": "5238c9ccb784dc4f151653318afb702abfbf8d5bc68fe47940956f45adda2a34",
+      "normal_recovery_archive_sha256": "46bc7772b46620cf2cc80ccab21f073b338caea1393411985d6e3fc4140d682d",
+      "raw_first_failure_sha256": "9d1e0e2d9459d06523ad13e28a4093c2316baafe7aec5b25f30eba2e113599c4",
+      "error_analysis_sha256": "fde4f4b50386a9345bbb5362edd390a6420eb75c54a2ab5d8ee3870ba9ac80d7"
+    },
+    {
+      "clock_hz": 150000000,
+      "byte_cycle_ns": 13.333333333333334,
+      "capture_phase_deg": 157.5,
+      "capture_delay_ns": 2.916666666666667,
+      "physical_result": "FAIL",
+      "request_length_bytes": 2112,
+      "first_error": {
+        "row": 128,
+        "column": 68,
+        "received_hex": "8f",
+        "expected_hex": "9f"
+      },
+      "byte_error_count": 96,
+      "bit_error_count": 102,
+      "retry_count": 0,
+      "first_failure_preserved": true,
+      "normal_recovery": "PASS",
+      "archive_sha256": "c85d7d5d8b749dd8c5fd63d09d031c0abdd7a06c46c2aaade58811d6fec5af32",
+      "normal_recovery_archive_sha256": "b3444d06dcb63e1ef213bd6159b08ef3c9c9604f03278f8b3ab31c4aa7f2b02b",
+      "raw_first_failure_sha256": "593bff1476e24ce7f367659112c08e3d3fb9e87dd5ac520c11718f8d6e6a85b2",
+      "error_analysis_sha256": "ea64495cf5e7060441f438c2a7e969e5367be740504abcd40ee907a0f68ac6da"
+    }
+  ],
+  "ce150_candidate": {
+    "profile": "nand-ce150-v1",
+    "capabilities": "43453135",
+    "clock_hz": 150000000,
+    "capture_phase_deg": 225,
+    "capture_phase_ns": 4.166666666666667,
+    "mmcm_vco_hz": 1050000000,
+    "ce_capture_pipeline": true,
+    "csr_decode_pipeline": true,
+    "rtl_tests": 13,
+    "rtl_fresh_runs": 11,
+    "rtl_exact_input_reuses": 2,
+    "host_tests": 11,
+    "internal": "PASS",
+    "normal_external": "PASS",
+    "edo_external": "NOT_QUALIFIED",
+    "setup_wns_ns": 0.015,
+    "hold_whs_ns": 0.015,
+    "drc_error_count": 0,
+    "bus_skew_constraints": 34,
+    "physical_validation": "NOT_RUN",
+    "stopped_before_physical_validation": true,
+    "measured_throughput_MB_s": null,
+    "artifact_sha256": {
+      "manifest": "640ced51f9602049851c9bfeecd681f2bf2e1122ff090c6b899fca8ee94ec75f",
+      "bit": "ac3036f96255e64899a5cd9cdbd7ba585062d55f50d1be73550492ea99891716",
+      "ltx": "3027011901ff017a8c982f61ac2d9211f3891bd949130b2c607531ca766818f7",
+      "payload": "fd6e263cdfb86f77c23058fc9e6423e8743960b5e30fb59acd2d20897bcad3d0",
+      "io": "1132c30b6cfcba852c1947f31982bf6c322e62c1fa8d62339fac47dc8b65a256",
+      "host": "7d0c6da88f5450d8d3771a5bf7b9644ddfbad2a75626d237cd6c1d72778522b3",
+      "source_lock": "25959e63bab4d4b4cc687039c11b3ce033051018090579856b2c7ef587354a38",
+      "build": "a8d17bfff9806334c05f71e1789ba52731381181d45a4c0b31b477203188c14c",
+      "routed_dcp": "f4b62684c5b0ff840f3d85ec0098fb8e927e49d0202e6a7ccbd0ed90eef9af62"
+    }
+  },
+  "ddr_tail_prefetch": {
+    "status": "OFFLINE_PASS",
+    "implementation": "NOT_RUN",
+    "hardware": "NOT_RUN",
+    "clock_hz": 150000000,
+    "fixture_tREA_ns": 10,
+    "fixture_is_vendor_guarantee": false,
+    "cycle_comparisons_64_pages": [
+      {
+        "pages": 64,
+        "response_delay_cycles": 0,
+        "deterministic_no_stall": true,
+        "baseline_cycles": 331084,
+        "candidate_cycles": 330706,
+        "saved_cycles": 378,
+        "time_reduction_percent": 0.11417042200770801,
+        "saved_ns_at_150MHz": 2520.0
+      },
+      {
+        "pages": 64,
+        "response_delay_cycles": 5,
+        "deterministic_no_stall": false,
+        "baseline_cycles": 332234,
+        "candidate_cycles": 331449,
+        "saved_cycles": 785,
+        "time_reduction_percent": 0.23627924896308025,
+        "saved_ns_at_150MHz": 5233.333333333333
+      }
+    ],
+    "offline_summary_sha256": "bbebd24f369ee7dedf132ddaff526d0eac5b83eb176d02048a57a07ceda3327e"
+  },
+  "thermal_guard": {
+    "sensor": "U13 board temperature",
+    "stop_threshold_c": 60,
+    "continuous_monitoring": true,
+    "valid_fresh_temperature_required_before_start": true,
+    "latched_stop_on_overtemperature_invalid_stale_or_i2c_fault": true,
+    "operator_required_to_resume": true,
+    "host_sram_fallback_requires_jtag": true,
+    "physical_heating_to_threshold_tested": false
+  },
+  "timing_scope": {
+    "125_and_150mhz_edo_below_datasheet_minimums": true,
+    "full_edo_external_budget": "NOT_QUALIFIED"
+  },
+  "kernel_observations": {
+    "load_and_read_intervals_new_errors": [],
+    "whole_lifecycle_clean": false,
+    "endpoint_removal_warning": "amd_iommu_release_device",
+    "kernel_or_iommu_configuration_changed": false
+  },
+  "provenance": "Selected fields derived from retained local experiment audits; original full archives are not included in this records update."
+}

@@ -15,6 +15,7 @@ full 4 GiB DDR3 write/read comparison.
 [FPGA build](fpga/README.md) ·
 [Results](docs/VALIDATED_RESULTS.zh-CN.md) ·
 [FPGA RAM disk](experiments/ramdisk/README.zh-CN.md) ·
+[NAND read experiments](docs/NAND_READ_OPTIMIZATION.zh-CN.md) ·
 [Full regression](docs/EXACT_IMAGE_REGRESSION.zh-CN.md) ·
 [Troubleshooting](docs/TROUBLESHOOTING.zh-CN.md)
 
@@ -69,6 +70,15 @@ numbers and concise evidence records are in
 [Validated results](docs/VALIDATED_RESULTS.zh-CN.md).
 
 ![XDMA DDR3 validation running in native Ubuntu](docs/images/xdma-debug-session.jpg)
+
+I also connected a 1.8 V Macronix `MX30UF1G18AC-TI` NAND board to the expansion
+IO. The fastest repeat-tested NAND→DDR result is 53.39 MB/s at a 125 MHz
+control clock, with 4096 reads of the same 64-page block passing. Two older
+150 MHz sampling configurations produced data errors; the new late-sampling
+version has passed local build checks and awaits hardware testing. The
+[experiment record](docs/NAND_READ_OPTIMIZATION.zh-CN.md) includes the errors,
+coverage, and pending work. This update adds records; the repository's default
+FPGA build remains the XDMA/DDR design.
 
 ## Hardware path
 

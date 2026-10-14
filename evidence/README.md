@@ -1,6 +1,6 @@
 # 实测证据
 
-这里保留两份与当前仓库直接对应的脱敏摘要、一份原生 PCIe 复测的终端结果摘录，
+这里保留与当前仓库直接对应的脱敏摘要、原生 PCIe 复测摘录、NAND实验摘要，
 以及一份解释 64 MiB 分块选择的历史负例。个人路径、邮箱、USB/JTAG 序列号、
 MOK 标识和私钥信息均未进入仓库。
 
@@ -10,6 +10,7 @@ MOK 标识和私钥信息均未进入仓库。
 | `validated_repository_exact_image_physical_regression_sanitized.log` | 同一 bitstream 的 JTAG、PCIe、Secure Boot、XDMA、双通道、完整 4 GiB 数据比较和清理 |
 | `native_pcie_msa2_console_summary_sanitized.log` | MS-A2 原生 PCIe Gen2 ×8 上同一 DMA 脚本的终端结果摘录；阶段日志仍在实验 U 盘 |
 | `historical_single_request_1g_failure_sanitized.log` | 单次 1 GiB 请求未完成数据比较的边界记录；后续正式流程改用 64 MiB 分块 |
+| `nand_read_optimization_20261014.json` | NAND通过结果、150 MHz首错、新版尚未实测状态和离线优化；保留原始归档哈希，不包含个人路径或远程登录资料 |
 
 前两份 `validated_repository_*` 记录使用相同的 bitstream SHA-256：
 

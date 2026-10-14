@@ -118,3 +118,11 @@ root port 均工作在 **5 GT/s ×8（PCIe Gen2 ×8）**。Secure Boot 保持开
 这些数字来自脚本的传输墙钟计时，不是整套脚本运行时间或 PCIe 线路峰值。
 本轮的[终端结果摘录](../evidence/native_pcie_msa2_console_summary_sanitized.log)
 保留了链路、Secure Boot、数据比较和清理结果。
+
+## 单颗 NAND 增量实验
+
+扩展IO连接MX30UF1G18AC-TI后，NAND→DDR有效数据吞吐从此前普通读取的
+27.07 MB/s提高到125 MHz EDO下的53.39 MB/s；4096次重复读取同一组64页通过。
+150 MHz的两个旧采样配置实测读错，新的CE晚采样版本已经构建，尚未实测。
+测速口径、覆盖范围、首错和构建记录见
+[单颗NAND读取提速记录](NAND_READ_OPTIMIZATION.zh-CN.md)。
